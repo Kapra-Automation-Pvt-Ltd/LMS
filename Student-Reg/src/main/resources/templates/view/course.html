@@ -128,9 +128,11 @@
                         <td th:text="${course.courseDescription}"></td>
                         <td th:text="${course.courseDuration}"></td>
                         <td>
+                            <a th:href="@{'/viewcourse/'+${course.courseId}}"><i class="fa fa-eye" style="font-size: 21px;"></i> </a>
                             <a th:href="@{'/editcourse/'+${course.courseId}}"><i class="fa fa-edit" style="font-size: 21px;"></i> </a>
                             <a href="#" class="confirm-delete"  th:attr="data-id=${course.courseId},data-name=${course.courseName}"></a>
                             <i class="fa fa-trash" style="font-size: 21px;color: red;"></i>
+
 
                         </td>
 

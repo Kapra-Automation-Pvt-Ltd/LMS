@@ -13,7 +13,7 @@ import java.util.List;
 public interface CourseFileRepository extends JpaRepository<CourseFile,Long> {
 
     @Query("select  f from CourseFile as f where f.course.id = ?1")
-    List<CourseFile> findFilesByUserId(Long courseId);
+    List<CourseFile> findFilesByCourseId(Long courseId);
 
     @Modifying
     @Query("delete from CourseFile as f where f.course.id = ?1 and f.modifiedFileName in (?2 )")

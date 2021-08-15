@@ -51,7 +51,7 @@ public class FileUploadController {
     @GetMapping(value = "/editcourse/{courseId}")
     public String editcourse(@PathVariable Long courseId, Model model){
         Course course =courseService.findById(courseId);
-        List<CourseFile> courseFiles = courseService.findFilesByUserId(courseId);
+        List<CourseFile> courseFiles = courseService.findFilesByCourseId(courseId);
         List<Course> courses=courseService.getAllCourses();
         model.addAttribute("courses",courses);
         model.addAttribute("course",course);
@@ -84,6 +84,23 @@ public class FileUploadController {
         redirectAttributes.addFlashAttribute("successmassage","course is deleted succesfully");
         return "redirect:/";
     }
+
+
+
+    @GetMapping(value = "/viewcourse/{courseId}")
+    public String viewcourse(@PathVariable Long courseId, Model model){
+        Course course =courseService.findById(courseId);
+        List<CourseFile> courseFiles = courseService.findFilesByCourseId(courseId);
+        List<Course> courses=courseService.getAllCourses();
+        model.addAttribute("courses",courses);
+        model.addAttribute("course",course);
+        model.addAttribute("courseFiles",courseFiles);
+        model.addAttribute("isAdd",false);
+
+        return "view/viewcourse";
+    }
+
+
 
 
 

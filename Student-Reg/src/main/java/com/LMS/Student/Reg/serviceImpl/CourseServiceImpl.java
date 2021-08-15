@@ -87,8 +87,8 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public List<CourseFile> findFilesByUserId(Long courseId) {
-        return courseFileRepository.findFilesByUserId(courseId);
+    public List<CourseFile> findFilesByCourseId(Long courseId) {
+        return courseFileRepository.findFilesByCourseId(courseId);
 
     }
 
@@ -153,7 +153,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void deleteFilesByCourseId(Long courseId) {
-        List<CourseFile> courseFiles = courseFileRepository.findFilesByUserId(courseId);
+        List<CourseFile> courseFiles = courseFileRepository.findFilesByCourseId(courseId);
         if (courseFiles == null && courseFiles.size()>0) {
             for (CourseFile dbFile: courseFiles){
 
