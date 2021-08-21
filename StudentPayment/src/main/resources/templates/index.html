@@ -1,0 +1,75 @@
+
+<html lang="en">
+<head>
+  <title>Payment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<br><br>
+<h1 class="text-center">Student Payment</h1><br><br>
+<div class="contact py-sm-5 py-4">
+		<div class="container py-xl-4 py-lg-2">
+		<!-- form -->
+		<form id="form">
+				<div class="contact-grids1 w3agile-6">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Bank</label>
+							<input type="text" class="form-control" placeholder="Bank Name" id="bank" name="bank" required="required">
+							<p id="error_name"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Branch</label>
+							<input type="text" class="form-control" placeholder="Branch Name" id="branch" name="branch" required="required">
+							<p id="error_description"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Image</label>
+							<input type="file" class="form-control" placeholder="" name="image" id="image" required="required">
+							<p id="error_file"></p>
+						</div>
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Amount</label>
+							<input type="text" class="form-control" placeholder="Amount" name="amount" id="amount" required="required">
+							<p id="error_price"></p>
+						</div>
+						
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Payment Type</label>
+							<input type="text" class="form-control" placeholder="PAymentType" name="paymentType" id="paymentType" required="required">
+							<p id="error_price"></p>
+						</div>
+						
+						<div class="col-md-6 col-sm-6 contact-form1 form-group">
+							<label class="col-form-label">Status Type</label>
+							<input type="text" class="form-control" Value="pending" name="status" id="status" required="required">
+							<p id="error_price"></p>
+						</div>
+						
+						
+					</div>
+					
+						<div class="right-w3l col-md-6">
+							<input type="button" id="submit" class="btn btn-primary form-control" value="Submit">
+							<br><br>
+						</div>
+						<a href="/payments/show" style="float:left;" class="btn btn-success text-right">Show All</a>
+						
+				</div>
+				<br>
+				<div id="success" class="text-center" style="color:green;"></div>
+				<div id="error" class="text-center" style="color:red;"></div>
+			</form>
+		</div>
+	</div>
+<p class="text-center">
+  	<img src="/payments/loader.gif" alt="loader" style="width: 150px;height: 120px;" id="loader">
+</p>
+	<script src="/js/product.js"></script>
+</body>
+</html>
